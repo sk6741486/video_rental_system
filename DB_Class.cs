@@ -58,5 +58,37 @@ namespace video_rental_system
             return dt;
         }
 
-    }
+        public string CustomerInsert(string FName, string LName, string Mobile, string Address)
+        {
+            try
+            {
+                Cmd.Parameters.Clear();
+                Cmd.Connection = Obj_Conn;
+                QueryString = "Insert into Customer(FirstName,LastName,Address, Phone) Values(@FirstName,@LastName,@Address, @Mobile)";
+                Cmd.Parameters.AddWithValue("@FirstName", FName);
+                Cmd.Parameters.AddWithValue("@LastName", LName);
+                Cmd.Parameters.AddWithValue("@Address", Address);
+                Cmd.Parameters.AddWithValue("@Mobile", Mobile);
+                Cmd.CommandText = QueryString;
+                //connection opened
+                Obj_Conn.Open();
+                // Executed query
+                Cmd.ExecuteNonQuery();
+                return "successfully inserted";
+            }
+            catch (Exception ex)
+            {
+                // show error Message
+                return ex.Message;
+            }
+            finally
+            {
+                // close connection
+                if (Obj_Conn != null)
+                {
+                    Obj_Conn.Close();
+                }
+            }
+        }
+        }
 }

@@ -61,6 +61,24 @@ namespace video_rental_system
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ADD_CA_Click(object sender, EventArgs e)
+        {
+            if (FirstName_tb.Text != "" && LastName_tb.Text != "" && Address_tb.Text != "" && Phone_tb.Text != "")
+            {
+                string message = Obj_data.CustomerInsert(FirstName_tb.Text, LastName_tb.Text, Phone_tb.Text, Address_tb.Text);
+                MessageBox.Show(message);
+                FirstName_tb.Text = "";
+                LastName_tb.Text = "";
+                Phone_tb.Text = "";
+                Address_tb.Text = "";
+                Customer_Load();
+            }
+            else
+            {
+                MessageBox.Show("Fill required details then move ahead");
+            }
+        }
     }
 }
     
