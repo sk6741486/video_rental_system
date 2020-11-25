@@ -37,6 +37,8 @@ namespace video_rental_system
             this.rental = new System.Windows.Forms.TabPage();
             this.grid_rental = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateReturned_tb = new System.Windows.Forms.DateTimePicker();
+            this.dateRented_tb = new System.Windows.Forms.DateTimePicker();
             this.UPDATE = new System.Windows.Forms.Button();
             this.DELET = new System.Windows.Forms.Button();
             this.ADD = new System.Windows.Forms.Button();
@@ -80,8 +82,6 @@ namespace video_rental_system
             this.Rating = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateRented_tb = new System.Windows.Forms.DateTimePicker();
-            this.dateReturned_tb = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).BeginInit();
@@ -121,7 +121,7 @@ namespace video_rental_system
             this.grid_customer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.grid_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_customer.GridColor = System.Drawing.Color.Gainsboro;
-            this.grid_customer.Location = new System.Drawing.Point(6, 6);
+            this.grid_customer.Location = new System.Drawing.Point(6, 9);
             this.grid_customer.Name = "grid_customer";
             this.grid_customer.Size = new System.Drawing.Size(422, 207);
             this.grid_customer.TabIndex = 0;
@@ -168,6 +168,7 @@ namespace video_rental_system
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.dateReturned_tb);
             this.panel1.Controls.Add(this.dateRented_tb);
             this.panel1.Controls.Add(this.UPDATE);
@@ -185,9 +186,23 @@ namespace video_rental_system
             this.panel1.Size = new System.Drawing.Size(360, 232);
             this.panel1.TabIndex = 1;
             // 
+            // dateReturned_tb
+            // 
+            this.dateReturned_tb.Location = new System.Drawing.Point(14, 153);
+            this.dateReturned_tb.Name = "dateReturned_tb";
+            this.dateReturned_tb.Size = new System.Drawing.Size(180, 20);
+            this.dateReturned_tb.TabIndex = 13;
+            // 
+            // dateRented_tb
+            // 
+            this.dateRented_tb.Location = new System.Drawing.Point(14, 121);
+            this.dateRented_tb.Name = "dateRented_tb";
+            this.dateRented_tb.Size = new System.Drawing.Size(180, 20);
+            this.dateRented_tb.TabIndex = 12;
+            // 
             // UPDATE
             // 
-            this.UPDATE.Location = new System.Drawing.Point(258, 196);
+            this.UPDATE.Location = new System.Drawing.Point(121, 200);
             this.UPDATE.Name = "UPDATE";
             this.UPDATE.Size = new System.Drawing.Size(75, 23);
             this.UPDATE.TabIndex = 11;
@@ -196,7 +211,7 @@ namespace video_rental_system
             // 
             // DELET
             // 
-            this.DELET.Location = new System.Drawing.Point(140, 200);
+            this.DELET.Location = new System.Drawing.Point(258, 196);
             this.DELET.Name = "DELET";
             this.DELET.Size = new System.Drawing.Size(75, 23);
             this.DELET.TabIndex = 10;
@@ -273,6 +288,7 @@ namespace video_rental_system
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel3.Controls.Add(this.UPDATE_CL);
             this.panel3.Controls.Add(this.DELET_CL);
             this.panel3.Controls.Add(this.ADD_CA);
@@ -292,7 +308,7 @@ namespace video_rental_system
             // 
             // UPDATE_CL
             // 
-            this.UPDATE_CL.Location = new System.Drawing.Point(227, 221);
+            this.UPDATE_CL.Location = new System.Drawing.Point(138, 221);
             this.UPDATE_CL.Name = "UPDATE_CL";
             this.UPDATE_CL.Size = new System.Drawing.Size(75, 23);
             this.UPDATE_CL.TabIndex = 11;
@@ -301,7 +317,7 @@ namespace video_rental_system
             // 
             // DELET_CL
             // 
-            this.DELET_CL.Location = new System.Drawing.Point(127, 221);
+            this.DELET_CL.Location = new System.Drawing.Point(257, 221);
             this.DELET_CL.Name = "DELET_CL";
             this.DELET_CL.Size = new System.Drawing.Size(75, 23);
             this.DELET_CL.TabIndex = 10;
@@ -393,6 +409,7 @@ namespace video_rental_system
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.UPDATE_btn);
             this.panel2.Controls.Add(this.DELET_btn);
             this.panel2.Controls.Add(this.ADD_btn);
@@ -419,7 +436,7 @@ namespace video_rental_system
             // 
             // UPDATE_btn
             // 
-            this.UPDATE_btn.Location = new System.Drawing.Point(316, 258);
+            this.UPDATE_btn.Location = new System.Drawing.Point(203, 258);
             this.UPDATE_btn.Name = "UPDATE_btn";
             this.UPDATE_btn.Size = new System.Drawing.Size(75, 23);
             this.UPDATE_btn.TabIndex = 18;
@@ -428,7 +445,7 @@ namespace video_rental_system
             // 
             // DELET_btn
             // 
-            this.DELET_btn.Location = new System.Drawing.Point(190, 258);
+            this.DELET_btn.Location = new System.Drawing.Point(337, 258);
             this.DELET_btn.Name = "DELET_btn";
             this.DELET_btn.Size = new System.Drawing.Size(75, 23);
             this.DELET_btn.TabIndex = 17;
@@ -573,24 +590,11 @@ namespace video_rental_system
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 0;
             // 
-            // dateRented_tb
-            // 
-            this.dateRented_tb.Location = new System.Drawing.Point(14, 121);
-            this.dateRented_tb.Name = "dateRented_tb";
-            this.dateRented_tb.Size = new System.Drawing.Size(180, 20);
-            this.dateRented_tb.TabIndex = 12;
-            // 
-            // dateReturned_tb
-            // 
-            this.dateReturned_tb.Location = new System.Drawing.Point(14, 153);
-            this.dateReturned_tb.Name = "dateReturned_tb";
-            this.dateReturned_tb.Size = new System.Drawing.Size(180, 20);
-            this.dateReturned_tb.TabIndex = 13;
-            // 
             // video_rental_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(869, 581);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -598,6 +602,7 @@ namespace video_rental_system
             this.Controls.Add(this.tabControl1);
             this.Name = "video_rental_system";
             this.Text = "video_rental_system";
+            this.Load += new System.EventHandler(this.video_rental_system_Load);
             this.tabControl1.ResumeLayout(false);
             this.customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).EndInit();

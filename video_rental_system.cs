@@ -79,6 +79,11 @@ namespace video_rental_system
                 MessageBox.Show("Fill required details then move ahead");
             }
         }
+
+        private void video_rental_system_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     
