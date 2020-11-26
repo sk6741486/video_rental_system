@@ -14,7 +14,9 @@ namespace video_rental_system
         private SqlCommand Cmd = new SqlCommand();
         private SqlDataReader Data_Reader;
         private SqlDataAdapter da = new SqlDataAdapter();
-        string QueryString; public DB_Class()
+        string QueryString;
+        public int CustomerID;
+        public DB_Class()
         {
             string ConnString = @"Data Source=LAPTOP-39KQ6SLL\SQLEXPRESS;Initial Catalog=Video_Rental_System;Integrated Security=True";
             Obj_Conn.ConnectionString = ConnString;
@@ -90,5 +92,69 @@ namespace video_rental_system
                 }
             }
         }
+        public string CustomerUpdate(string FName, string LName, string Mobile, string Address)
+        {
+            try
+            {
+                Cmd.Parameters.Clear();
+                Cmd.Connection = Obj_Conn;
+                QueryString = "Insert into Customer(FirstName,LastName,Address, Phone) Values(@FirstName,@LastName,@Address, @Mobile)";
+                Cmd.Parameters.AddWithValue("@FirstName", FName);
+                Cmd.Parameters.AddWithValue("@LastName", LName);
+                Cmd.Parameters.AddWithValue("@Address", Address);
+                Cmd.Parameters.AddWithValue("@Mobile", Mobile);
+                Cmd.CommandText = QueryString;
+                //connection opened
+                Obj_Conn.Open();
+
+                // Executed query
+                Cmd.ExecuteNonQuery();
+                return "successfully updated";
+            }
+            catch (Exception ex)
+            {
+                // show error Message
+                return ex.Message;
+            }
+            finally
+            {
+                // close connection
+                if (Obj_Conn != null)
+                {
+                    Obj_Conn.Close();
+                }
+            }
         }
-}
+        public string CustomerDelete()
+        {
+            try
+            {
+                Cmd.Parameters.Clear();
+                Cmd.Connection = Obj_Conn;
+                QueryString = "Delete from Customer where CustID =@CustID";
+                Cmd.Parameters.AddWithValue("@CustID", CustomerID);
+                Cmd.CommandText = QueryString;
+                //connection opened
+                Obj_Conn.Open();
+                // Executed query
+                Cmd.ExecuteNonQuery();
+                return "Customer Data Deleted Successfully";
+            }
+            catch (Exception ex)
+            {
+                // show error Message
+                return ex.Message;
+            }
+            finally
+            {
+                // close connection
+                if (Obj_Conn != null)
+                {
+                    Obj_Conn.Close();
+                }
+            }
+        }
+    }
+    }
+
+

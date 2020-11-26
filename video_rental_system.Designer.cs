@@ -51,7 +51,7 @@ namespace video_rental_system
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.UPDATE_CL = new System.Windows.Forms.Button();
-            this.DELET_CL = new System.Windows.Forms.Button();
+            this.DELETE_CL = new System.Windows.Forms.Button();
             this.ADD_CA = new System.Windows.Forms.Button();
             this.Phone_tb = new System.Windows.Forms.TextBox();
             this.Address_tb = new System.Windows.Forms.TextBox();
@@ -125,6 +125,8 @@ namespace video_rental_system
             this.grid_customer.Name = "grid_customer";
             this.grid_customer.Size = new System.Drawing.Size(422, 207);
             this.grid_customer.TabIndex = 0;
+            this.grid_customer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_customer_CellContentClick);
+            this.grid_customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_customer_CellContentClick);
             // 
             // movie
             // 
@@ -215,7 +217,7 @@ namespace video_rental_system
             this.DELET.Name = "DELET";
             this.DELET.Size = new System.Drawing.Size(75, 23);
             this.DELET.TabIndex = 10;
-            this.DELET.Text = "DELET";
+            this.DELET.Text = "DELETE";
             this.DELET.UseVisualStyleBackColor = true;
             // 
             // ADD
@@ -290,7 +292,7 @@ namespace video_rental_system
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel3.Controls.Add(this.UPDATE_CL);
-            this.panel3.Controls.Add(this.DELET_CL);
+            this.panel3.Controls.Add(this.DELETE_CL);
             this.panel3.Controls.Add(this.ADD_CA);
             this.panel3.Controls.Add(this.Phone_tb);
             this.panel3.Controls.Add(this.Address_tb);
@@ -314,15 +316,17 @@ namespace video_rental_system
             this.UPDATE_CL.TabIndex = 11;
             this.UPDATE_CL.Text = "UPDATE";
             this.UPDATE_CL.UseVisualStyleBackColor = true;
+            this.UPDATE_CL.Click += new System.EventHandler(this.UPDATE_CL_Click);
             // 
-            // DELET_CL
+            // DELETE_CL
             // 
-            this.DELET_CL.Location = new System.Drawing.Point(257, 221);
-            this.DELET_CL.Name = "DELET_CL";
-            this.DELET_CL.Size = new System.Drawing.Size(75, 23);
-            this.DELET_CL.TabIndex = 10;
-            this.DELET_CL.Text = "DELET";
-            this.DELET_CL.UseVisualStyleBackColor = true;
+            this.DELETE_CL.Location = new System.Drawing.Point(257, 221);
+            this.DELETE_CL.Name = "DELETE_CL";
+            this.DELETE_CL.Size = new System.Drawing.Size(75, 23);
+            this.DELETE_CL.TabIndex = 10;
+            this.DELETE_CL.Text = "DELETE";
+            this.DELETE_CL.UseVisualStyleBackColor = true;
+            this.DELETE_CL.Click += new System.EventHandler(this.DELETE_CL_Click);
             // 
             // ADD_CA
             // 
@@ -449,7 +453,7 @@ namespace video_rental_system
             this.DELET_btn.Name = "DELET_btn";
             this.DELET_btn.Size = new System.Drawing.Size(75, 23);
             this.DELET_btn.TabIndex = 17;
-            this.DELET_btn.Text = "DELET";
+            this.DELET_btn.Text = "DELETE";
             this.DELET_btn.UseVisualStyleBackColor = true;
             // 
             // ADD_btn
@@ -660,7 +664,7 @@ namespace video_rental_system
         private System.Windows.Forms.TextBox LastName_tb;
         private System.Windows.Forms.TextBox Address_tb;
         private System.Windows.Forms.Button UPDATE_CL;
-        private System.Windows.Forms.Button DELET_CL;
+        private System.Windows.Forms.Button DELETE_CL;
         private System.Windows.Forms.Button ADD_CA;
         private System.Windows.Forms.TextBox Phone_tb;
         private System.Windows.Forms.TextBox Title_tb;
