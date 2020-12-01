@@ -96,6 +96,7 @@ namespace video_rental_system
                 Phone_tb.Text = "";
                 Address_tb.Text = "";
                 Customer_Load();
+
             }
             else
             {
@@ -138,7 +139,7 @@ namespace video_rental_system
         {
             if (Rating_tb.Text != "" && Title_tb.Text != "" && Year_tb.Text != "" && RentalCost_tb.Text != "" && Copies_tb.Text != "" && Plot_tb.Text != "" && Genre_tb.Text != "")
             {
-                string message = Obj_data.MovieInsert(Rating_tb.Text, Title_tb.Text, Year_tb.Text, RentalCost_tb.Text, Copies_tb.Text, Plot_tb.Text, Genre_tb);
+                string message = Obj_data.MovieInsert(Rating_tb.Text, Title_tb.Text, Year_tb.Text, RentalCost_tb.Text, Copies_tb.Text, Plot_tb.Text, Genre_tb.Text);
                 MessageBox.Show(message);
                 Rating_tb.Text = "";
                 Title_tb.Text = "";
@@ -147,13 +148,13 @@ namespace video_rental_system
                 Copies_tb.Text = "";
                 Plot_tb.Text = "";
                 Genre_tb.Text = "";
-                Customer_Load();
+                Movies_Load();
             }
             else
             {
                 MessageBox.Show("Fill required details then move ahead");
             }
-        }
+       }
     }
     }
     
