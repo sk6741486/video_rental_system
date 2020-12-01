@@ -133,7 +133,29 @@ namespace video_rental_system
             Address_tb.Text = "";
             Customer_Load();
         }
+
+        private void ADD_btn_Click(object sender, EventArgs e)
+        {
+            if (Rating_tb.Text != "" && Title_tb.Text != "" && Year_tb.Text != "" && RentalCost_tb.Text != "" && Copies_tb.Text != "" && Plot_tb.Text != "" && Genre_tb.Text != "")
+            {
+                string message = Obj_data.MovieInsert(Rating_tb.Text, Title_tb.Text, Year_tb.Text, RentalCost_tb.Text, Copies_tb.Text, Plot_tb.Text, Genre_tb);
+                MessageBox.Show(message);
+                Rating_tb.Text = "";
+                Title_tb.Text = "";
+                Year_tb.Text = "";
+                RentalCost_tb.Text = "";
+                Copies_tb.Text = "";
+                Plot_tb.Text = "";
+                Genre_tb.Text = "";
+                Customer_Load();
+            }
+            else
+            {
+                MessageBox.Show("Fill required details then move ahead");
+            }
+        }
     }
     }
+    
 
 

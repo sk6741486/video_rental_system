@@ -464,6 +464,7 @@ namespace video_rental_system
             this.ADD_btn.TabIndex = 16;
             this.ADD_btn.Text = "ADD";
             this.ADD_btn.UseVisualStyleBackColor = true;
+            this.ADD_btn.Click += new System.EventHandler(this.ADD_btn_Click);
             // 
             // Genre_tb
             // 

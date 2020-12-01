@@ -15,7 +15,7 @@ namespace video_rental_system
         private SqlDataReader Data_Reader;
         private SqlDataAdapter da = new SqlDataAdapter();
         string QueryString;
-        public int CustomerID;
+        public int CustomerID, MovieID;
         public DB_Class()
         {
             string ConnString = @"Data Source=LAPTOP-39KQ6SLL\SQLEXPRESS;Initial Catalog=Video_Rental_System;Integrated Security=True";
@@ -153,8 +153,43 @@ namespace video_rental_system
                     Obj_Conn.Close();
                 }
             }
-        }
-    }
-    }
 
+            public string MovieInsert(string Rating, string Title, string Year, string RentalCost, string Copies, string Plot, string Genre)
+            {
+                try
+                {
+                    Cmd.Parameters.Clear();
+                    Cmd.Connection = Obj_Conn;
+                    QueryString = "Insert into Movie(Rating,Title,Year,Rentalcost,Copies,Plot,Genre) Values(@Rating,@Title,@Year,@RentalCost,@Copies,@Plot,@Genre)";
+                    Cmd.Parameters.AddWithValue("@Rating", Rating);
+                    Cmd.Parameters.AddWithValue("@Title", Title);
+                    Cmd.Parameters.AddWithValue("@Year", Year);
+                    Cmd.Parameters.AddWithValue("@RentalCost", RentalCost);
+                    Cmd.Parameters.AddWithValue("@Copies", Copies);
+                    Cmd.Parameters.AddWithValue("@Plot", Plot);
+                    Cmd.Parameters.AddWithValue("@Genre", Genre);
+                    Cmd.CommandText = QueryString;
+                    //connection opened
+                    Obj_Conn.Open();
+                    // Executed query
+                    Cmd.ExecuteNonQuery();
+                    return "successfully inserted";
+                }
+                catch (Exception ex)
+                {
+                    // show error Message
+                    return ex.Message;
+                }
+                finally
+                {
+                    // close connection
+                    if (Obj_Conn != null)
+                    {
+                        Obj_Conn.Close();
+                    }
+                }
+            }
+        }
+    } 
+}
 
