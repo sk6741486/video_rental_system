@@ -155,8 +155,92 @@ namespace video_rental_system
                 MessageBox.Show("Fill required details then move ahead");
             }
        }
+
+        private void Issue_Movie_Click(object sender, EventArgs e)
+        {
+            if (movie_tb.Text != "" && CustName_tb.Text != "")
+            {
+                string message = Obj_data.IssueMovie(Convert.ToDateTime(dateRented_tb.Text));
+                MessageBox.Show(message);
+                Rating_tb.Text = "";
+                Title_tb.Text = "";
+                Year_tb.Text = "";
+                RentalCost_tb.Text = "";
+                Copies_tb.Text = "";
+                Plot_tb.Text = "";
+                Genre_tb.Text = "";
+                movie_tb.Text = "";
+                FirstName_tb.Text = "";
+                LastName_tb.Text = "";
+                Address_tb.Text = "";
+                Phone_tb.Text = "";
+                CustName_tb.Text = "";
+               
+                Rental_Load();
+            }
+            else
+            {
+                // code to show the message if user did not fill all the details
+                MessageBox.Show("Please fill all the required details and add the new details with the help of ADD button");
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void grid_movie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string newvalue = grid_movie.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                
+                this.Text = "Row : " + e.RowIndex.ToString() + " Col : " + e.ColumnIndex.ToString() + " Value = " + newvalue;
+                Obj_data.MovieID = Convert.ToInt32(grid_movie.Rows[e.RowIndex].Cells[0].Value);
+                Rating_tb.Text = grid_movie.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Title_tb.Text = grid_movie.Rows[e.RowIndex].Cells[2].Value.ToString();
+                Year_tb.Text = grid_movie.Rows[e.RowIndex].Cells[3].Value.ToString();
+                RentalCost_tb.Text =grid_movie.Rows[e.RowIndex].Cells[4].Value.ToString();
+                Copies_tb.Text = grid_movie.Rows[e.RowIndex].Cells[5].Value.ToString();
+                Plot_tb.Text = grid_movie.Rows[e.RowIndex].Cells[6].Value.ToString();
+                Genre_tb.Text = grid_movie.Rows[e.RowIndex].Cells[7].Value.ToString();
+                movie_tb.Text = grid_movie.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                // code to show the message if user did not fill all the details
+                MessageBox.Show("Something is wrong", ex.Message);
+            }
+
+        }
+
+        private void grid_rental_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string newvalue = grid_rental.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                this.Text = "Row : " + e.RowIndex.ToString() + " Col : " + e.ColumnIndex.ToString() + " Value = " + newvalue;
+                Obj_data.RentalMovieID = Convert.ToInt32(grid_rental.Rows[e.RowIndex].Cells[0].Value);
+                movie_tb.Text = grid_rental.Rows[e.RowIndex].Cells[1].Value.ToString();
+                CustName_tb.Text = grid_rental.Rows[e.RowIndex].Cells[2].Value.ToString();
+                dateRented_tb.Text = grid_rental.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateReturned_tb.Text = grid_rental.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                movie_tb.Text = grid_movie.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                // code to show the message if user did not fill all the details
+                MessageBox.Show("Something is wrong", ex.Message);
+            }
+
+        }
     }
     }
+    
     
 
 

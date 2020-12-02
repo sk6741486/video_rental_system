@@ -15,7 +15,7 @@ namespace video_rental_system
         private SqlDataReader Data_Reader;
         private SqlDataAdapter da = new SqlDataAdapter();
         string QueryString;
-        public int CustomerID, MoviesID;
+        public int CustomerID, MoviesID , MovieID, RentalMovieID;
         public DB_Class()
         {
             string ConnString = @"Data Source=LAPTOP-39KQ6SLL\SQLEXPRESS;Initial Catalog=Video_Rental_System;Integrated Security=True";
@@ -193,6 +193,38 @@ namespace video_rental_system
                 }
             }
         }
+        public string IssueMovie(DateTime Issue_date)
+        {
+            try
+            {
+                Cmd.Parameters.Clear();
+                Cmd.Connection = Obj_Conn;
+                QueryString = "Insert into RentedMovies(Movie_Name,CustomerName,DateRented,DateReturned) values(@MovieID,@CustID,@Issue_date,Null)";
+                Cmd.Parameters.AddWithValue("@CustID", CustomerID);
+                Cmd.Parameters.AddWithValue("@MovieID", MovieID);
+                Cmd.Parameters.AddWithValue("@Issue_date", Issue_date);
+                Cmd.CommandText = QueryString;
+                //connection opened
+                Obj_Conn.Open();
+                // Executed query
+                Cmd.ExecuteNonQuery();
+                return "Movies issued to customer";
+            }
+            catch (Exception ex)
+            {
+                // code to show error Message
+                return ex.Message;
+            }
+            finally
+            {
+                // close connection
+                if (Obj_Conn != null)
+                {
+                    Obj_Conn.Close();
+                }
+            }
+        }
+
     }
 }
 

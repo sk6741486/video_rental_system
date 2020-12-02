@@ -37,16 +37,15 @@ namespace video_rental_system
             this.rental = new System.Windows.Forms.TabPage();
             this.grid_rental = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Return_Movie = new System.Windows.Forms.Button();
+            this.Issue_Movie = new System.Windows.Forms.Button();
             this.dateReturned_tb = new System.Windows.Forms.DateTimePicker();
             this.dateRented_tb = new System.Windows.Forms.DateTimePicker();
-            this.UPDATE = new System.Windows.Forms.Button();
-            this.DELET = new System.Windows.Forms.Button();
-            this.ADD = new System.Windows.Forms.Button();
             this.DateReturned = new System.Windows.Forms.Label();
             this.DateRented = new System.Windows.Forms.Label();
             this.CustName_tb = new System.Windows.Forms.TextBox();
             this.Customer_Name = new System.Windows.Forms.Label();
-            this.movie_Name = new System.Windows.Forms.Label();
+            this.Movie_Name = new System.Windows.Forms.Label();
             this.movie_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -147,6 +146,7 @@ namespace video_rental_system
             this.grid_movie.Name = "grid_movie";
             this.grid_movie.Size = new System.Drawing.Size(422, 207);
             this.grid_movie.TabIndex = 0;
+            this.grid_movie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_movie_CellContentClick);
             // 
             // rental
             // 
@@ -167,26 +167,45 @@ namespace video_rental_system
             this.grid_rental.Name = "grid_rental";
             this.grid_rental.Size = new System.Drawing.Size(422, 207);
             this.grid_rental.TabIndex = 0;
+            this.grid_rental.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_rental_CellContentClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.Return_Movie);
+            this.panel1.Controls.Add(this.Issue_Movie);
             this.panel1.Controls.Add(this.dateReturned_tb);
             this.panel1.Controls.Add(this.dateRented_tb);
-            this.panel1.Controls.Add(this.UPDATE);
-            this.panel1.Controls.Add(this.DELET);
-            this.panel1.Controls.Add(this.ADD);
             this.panel1.Controls.Add(this.DateReturned);
             this.panel1.Controls.Add(this.DateRented);
             this.panel1.Controls.Add(this.CustName_tb);
             this.panel1.Controls.Add(this.Customer_Name);
-            this.panel1.Controls.Add(this.movie_Name);
+            this.panel1.Controls.Add(this.Movie_Name);
             this.panel1.Controls.Add(this.movie_tb);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(478, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(360, 232);
             this.panel1.TabIndex = 1;
+            // 
+            // Return_Movie
+            // 
+            this.Return_Movie.Location = new System.Drawing.Point(212, 196);
+            this.Return_Movie.Name = "Return_Movie";
+            this.Return_Movie.Size = new System.Drawing.Size(103, 23);
+            this.Return_Movie.TabIndex = 15;
+            this.Return_Movie.Text = "Return Movie";
+            this.Return_Movie.UseVisualStyleBackColor = true;
+            // 
+            // Issue_Movie
+            // 
+            this.Issue_Movie.Location = new System.Drawing.Point(39, 196);
+            this.Issue_Movie.Name = "Issue_Movie";
+            this.Issue_Movie.Size = new System.Drawing.Size(117, 23);
+            this.Issue_Movie.TabIndex = 14;
+            this.Issue_Movie.Text = "Issue Movie";
+            this.Issue_Movie.UseVisualStyleBackColor = true;
+            this.Issue_Movie.Click += new System.EventHandler(this.Issue_Movie_Click);
             // 
             // dateReturned_tb
             // 
@@ -201,33 +220,6 @@ namespace video_rental_system
             this.dateRented_tb.Name = "dateRented_tb";
             this.dateRented_tb.Size = new System.Drawing.Size(180, 20);
             this.dateRented_tb.TabIndex = 12;
-            // 
-            // UPDATE
-            // 
-            this.UPDATE.Location = new System.Drawing.Point(121, 200);
-            this.UPDATE.Name = "UPDATE";
-            this.UPDATE.Size = new System.Drawing.Size(75, 23);
-            this.UPDATE.TabIndex = 11;
-            this.UPDATE.Text = "UPDATE";
-            this.UPDATE.UseVisualStyleBackColor = true;
-            // 
-            // DELET
-            // 
-            this.DELET.Location = new System.Drawing.Point(258, 196);
-            this.DELET.Name = "DELET";
-            this.DELET.Size = new System.Drawing.Size(75, 23);
-            this.DELET.TabIndex = 10;
-            this.DELET.Text = "DELETE";
-            this.DELET.UseVisualStyleBackColor = true;
-            // 
-            // ADD
-            // 
-            this.ADD.Location = new System.Drawing.Point(15, 200);
-            this.ADD.Name = "ADD";
-            this.ADD.Size = new System.Drawing.Size(75, 23);
-            this.ADD.TabIndex = 9;
-            this.ADD.Text = "ADD";
-            this.ADD.UseVisualStyleBackColor = true;
             // 
             // DateReturned
             // 
@@ -263,14 +255,14 @@ namespace video_rental_system
             this.Customer_Name.TabIndex = 3;
             this.Customer_Name.Text = "Customer Name";
             // 
-            // movie_Name
+            // Movie_Name
             // 
-            this.movie_Name.AutoSize = true;
-            this.movie_Name.Location = new System.Drawing.Point(255, 43);
-            this.movie_Name.Name = "movie_Name";
-            this.movie_Name.Size = new System.Drawing.Size(65, 13);
-            this.movie_Name.TabIndex = 2;
-            this.movie_Name.Text = "Movie name";
+            this.Movie_Name.AutoSize = true;
+            this.Movie_Name.Location = new System.Drawing.Point(255, 43);
+            this.Movie_Name.Name = "Movie_Name";
+            this.Movie_Name.Size = new System.Drawing.Size(65, 13);
+            this.Movie_Name.TabIndex = 2;
+            this.Movie_Name.Text = "Movie name";
             // 
             // movie_tb
             // 
@@ -437,6 +429,7 @@ namespace video_rental_system
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(445, 294);
             this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // UPDATE_btn
             // 
@@ -638,7 +631,7 @@ namespace video_rental_system
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Customer_Detail;
-        private System.Windows.Forms.Label movie_Name;
+        private System.Windows.Forms.Label Movie_Name;
         private System.Windows.Forms.TextBox movie_tb;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
@@ -648,9 +641,6 @@ namespace video_rental_system
         private System.Windows.Forms.TextBox CustName_tb;
         private System.Windows.Forms.Label Customer_Name;
         private System.Windows.Forms.Label FirstName;
-        private System.Windows.Forms.Button UPDATE;
-        private System.Windows.Forms.Button DELET;
-        private System.Windows.Forms.Button ADD;
         private System.Windows.Forms.Label Phone;
         private System.Windows.Forms.Label Adress;
         private System.Windows.Forms.Label LastName;
@@ -680,6 +670,8 @@ namespace video_rental_system
         private System.Windows.Forms.TextBox Year_tb;
         private System.Windows.Forms.DateTimePicker dateReturned_tb;
         private System.Windows.Forms.DateTimePicker dateRented_tb;
+        private System.Windows.Forms.Button Return_Movie;
+        private System.Windows.Forms.Button Issue_Movie;
     }
 }
 
