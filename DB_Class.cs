@@ -357,6 +357,18 @@ namespace video_rental_system
             }
             return dt;
         }
+        public DataTable popcust_Data()
+        {
+            DataTable dt = new DataTable();
+            QueryString = "select * From popularcustomer";
+            using (da = new SqlDataAdapter(QueryString, Obj_Conn))
+            {
+                Obj_Conn.Open();
+                da.Fill(dt);
+                Obj_Conn.Close();
+            }
+            return dt;
+        }
     }
 }
 
