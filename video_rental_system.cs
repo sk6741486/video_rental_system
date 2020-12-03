@@ -137,14 +137,14 @@ namespace video_rental_system
 
         private void ADD_btn_Click(object sender, EventArgs e)
         {
-            if (Rating_tb.Text != "" && Title_tb.Text != "" && Year_tb.Text != "" && RentalCost_tb.Text != "" && Copies_tb.Text != "" && Plot_tb.Text != "" && Genre_tb.Text != "")
+            if (Rating_tb.Text != "" && Title_tb.Text != "" && Year_tb.Text != "" && Rental_Cost.Text != "" && Copies_tb.Text != "" && Plot_tb.Text != "" && Genre_tb.Text != "")
             {
-                string message = Obj_data.MovieInsert(Rating_tb.Text, Title_tb.Text, Year_tb.Text, RentalCost_tb.Text, Copies_tb.Text, Plot_tb.Text, Genre_tb.Text);
+                string message = Obj_data.MovieInsert(Rating_tb.Text, Title_tb.Text, Year_tb.Text, Rental_Cost.Text, Copies_tb.Text, Plot_tb.Text, Genre_tb.Text);
                 MessageBox.Show(message);
                 Rating_tb.Text = "";
                 Title_tb.Text = "";
                 Year_tb.Text = "";
-                RentalCost_tb.Text = "";
+                Rental_Cost.Text = "";
                 Copies_tb.Text = "";
                 Plot_tb.Text = "";
                 Genre_tb.Text = "";
@@ -165,7 +165,7 @@ namespace video_rental_system
                 Rating_tb.Text = "";
                 Title_tb.Text = "";
                 Year_tb.Text = "";
-                RentalCost_tb.Text = "";
+                Rental_Cost.Text = "";
                 Copies_tb.Text = "";
                 Plot_tb.Text = "";
                 Genre_tb.Text = "";
@@ -201,7 +201,7 @@ namespace video_rental_system
                 Rating_tb.Text = grid_movie.Rows[e.RowIndex].Cells[1].Value.ToString();
                 Title_tb.Text = grid_movie.Rows[e.RowIndex].Cells[2].Value.ToString();
                 Year_tb.Text = grid_movie.Rows[e.RowIndex].Cells[3].Value.ToString();
-                RentalCost_tb.Text =grid_movie.Rows[e.RowIndex].Cells[4].Value.ToString();
+                Rental_Cost.Text =grid_movie.Rows[e.RowIndex].Cells[4].Value.ToString();
                 Copies_tb.Text = grid_movie.Rows[e.RowIndex].Cells[5].Value.ToString();
                 Plot_tb.Text = grid_movie.Rows[e.RowIndex].Cells[6].Value.ToString();
                 Genre_tb.Text = grid_movie.Rows[e.RowIndex].Cells[7].Value.ToString();
@@ -238,8 +238,37 @@ namespace video_rental_system
             }
 
         }
+
+        private void Return_Movie_Click(object sender, EventArgs e)
+        {
+            if (movie_tb.Text != "" && CustName_tb.Text != "")
+            {
+                string message = Obj_data.ReturnMovie(Convert.ToDateTime(dateReturned_tb.Text));
+               MessageBox.Show(message);
+                Rating_tb.Text = "";
+                Title_tb.Text = "";
+                Year_tb.Text = "";
+                Rental_Cost.Text = "";
+                Copies_tb.Text = "";
+                Plot_tb.Text = "";
+                Genre_tb.Text = "";
+                movie_tb.Text = "";
+                FirstName_tb.Text = "";
+                LastName_tb.Text = "";
+                Phone_tb.Text = "";
+                Address_tb.Text = "";
+                CustName_tb.Text = "";
+                Rental_Load();
+            }
+            else
+            {
+                // code to show the message if user did not fill all the details
+                MessageBox.Show("Please fill all the required details and add new detail with the help of ADD button ");
+            }
+        }
     }
-    }
+ }
+    
     
     
 

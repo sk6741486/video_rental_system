@@ -68,7 +68,7 @@ namespace video_rental_system
             this.Genre_tb = new System.Windows.Forms.TextBox();
             this.Plot_tb = new System.Windows.Forms.TextBox();
             this.Copies_tb = new System.Windows.Forms.TextBox();
-            this.RentalCost_tb = new System.Windows.Forms.TextBox();
+            this.Rental_Cost = new System.Windows.Forms.TextBox();
             this.Year_tb = new System.Windows.Forms.TextBox();
             this.Title_tb = new System.Windows.Forms.TextBox();
             this.Rating_tb = new System.Windows.Forms.TextBox();
@@ -196,6 +196,7 @@ namespace video_rental_system
             this.Return_Movie.TabIndex = 15;
             this.Return_Movie.Text = "Return Movie";
             this.Return_Movie.UseVisualStyleBackColor = true;
+            this.Return_Movie.Click += new System.EventHandler(this.Return_Movie_Click);
             // 
             // Issue_Movie
             // 
@@ -412,7 +413,7 @@ namespace video_rental_system
             this.panel2.Controls.Add(this.Genre_tb);
             this.panel2.Controls.Add(this.Plot_tb);
             this.panel2.Controls.Add(this.Copies_tb);
-            this.panel2.Controls.Add(this.RentalCost_tb);
+            this.panel2.Controls.Add(this.Rental_Cost);
             this.panel2.Controls.Add(this.Year_tb);
             this.panel2.Controls.Add(this.Title_tb);
             this.panel2.Controls.Add(this.Rating_tb);
@@ -480,12 +481,12 @@ namespace video_rental_system
             this.Copies_tb.Size = new System.Drawing.Size(100, 20);
             this.Copies_tb.TabIndex = 13;
             // 
-            // RentalCost_tb
+            // Rental_Cost
             // 
-            this.RentalCost_tb.Location = new System.Drawing.Point(46, 131);
-            this.RentalCost_tb.Name = "RentalCost_tb";
-            this.RentalCost_tb.Size = new System.Drawing.Size(100, 20);
-            this.RentalCost_tb.TabIndex = 12;
+            this.Rental_Cost.Location = new System.Drawing.Point(46, 131);
+            this.Rental_Cost.Name = "Rental_Cost";
+            this.Rental_Cost.Size = new System.Drawing.Size(100, 20);
+            this.Rental_Cost.TabIndex = 12;
             // 
             // Year_tb
             // 
@@ -666,7 +667,7 @@ namespace video_rental_system
         private System.Windows.Forms.TextBox Genre_tb;
         private System.Windows.Forms.TextBox Plot_tb;
         private System.Windows.Forms.TextBox Copies_tb;
-        private System.Windows.Forms.TextBox RentalCost_tb;
+        private System.Windows.Forms.TextBox Rental_Cost;
         private System.Windows.Forms.TextBox Year_tb;
         private System.Windows.Forms.DateTimePicker dateReturned_tb;
         private System.Windows.Forms.DateTimePicker dateRented_tb;

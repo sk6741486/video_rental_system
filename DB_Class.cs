@@ -66,7 +66,7 @@ namespace video_rental_system
             {
                 Cmd.Parameters.Clear();
                 Cmd.Connection = Obj_Conn;
-                QueryString = "Insert into Customer(FirstName,LastName,Address, Phone) Values(@FirstName,@LastName,@Address, @Mobile)";
+                QueryString = "Insert into Customer(FirstName,LastName,Address, Phone) Values(@FirstName,@LastName,@Address, @Ph)";
                 Cmd.Parameters.AddWithValue("@FirstName", FName);
                 Cmd.Parameters.AddWithValue("@LastName", LName);
                 Cmd.Parameters.AddWithValue("@Address", Address);
@@ -102,7 +102,7 @@ namespace video_rental_system
                 Cmd.Parameters.AddWithValue("@FirstName", FName);
                 Cmd.Parameters.AddWithValue("@LastName", LName);
                 Cmd.Parameters.AddWithValue("@Address", Address);
-                Cmd.Parameters.AddWithValue("@Mobile", Mobile);
+                Cmd.Parameters.AddWithValue("@Phone", Mobile);
                 Cmd.CommandText = QueryString;
                 //connection opened
                 Obj_Conn.Open();
@@ -158,17 +158,17 @@ namespace video_rental_system
 
         }
 
-        public string MovieInsert(string Rating, string Title, string Year, string RentalCost, string Copies, string Plot, string Genre)
+        public string MovieInsert(string Rating, string Title, string Year, string Rental_Cost, string Copies, string Plot, string Genre)
         {
             try
             {
                 Cmd.Parameters.Clear();
                 Cmd.Connection = Obj_Conn;
-                QueryString = "Insert into Movie(Rating,Title,Year,Rentalcost,Copies,Plot,Genre) Values(@Rating,@Title,@Year,@RentalCost,@Copies,@Plot,@Genre)";
+                QueryString = "Insert into Movies(Rating,Title,Year,Rental_Cost,Copies,Plot,Genre) Values(@Rating,@Title,@Year,@Rental_Cost,@Copies,@Plot,@Genre)";
                 Cmd.Parameters.AddWithValue("@Rating", Rating);
                 Cmd.Parameters.AddWithValue("@Title", Title);
                 Cmd.Parameters.AddWithValue("@Year", Year);
-                Cmd.Parameters.AddWithValue("@RentalCost", RentalCost);
+                Cmd.Parameters.AddWithValue("@Rental_Cost", Rental_Cost);
                 Cmd.Parameters.AddWithValue("@Copies", Copies);
                 Cmd.Parameters.AddWithValue("@Plot", Plot);
                 Cmd.Parameters.AddWithValue("@Genre", Genre);
@@ -209,6 +209,38 @@ namespace video_rental_system
                 // Executed query
                 Cmd.ExecuteNonQuery();
                 return "Movies issued to customer";
+            }
+            catch (Exception ex)
+            {
+                // code to show error Message
+                return ex.Message;
+            }
+            finally
+            {
+                // close connection
+                if (Obj_Conn != null)
+                {
+                    Obj_Conn.Close();
+                }
+            }
+        }
+        public string ReturnMovie(DateTime Return_Date)
+        {
+            try
+            {
+                Cmd.Parameters.Clear();
+                Cmd.Connection = Obj_Conn;
+                QueryString = "Update into Update_Return(MovieIDFK,CustIDFK,DateRented,DateReturn) values(@MovieID,@CustID,@Return_Date,Null)";
+                Cmd.Parameters.AddWithValue("@CustID", CustomerID);
+                Cmd.Parameters.AddWithValue("@MovieID", MovieID);
+                Cmd.Parameters.AddWithValue("@Return_date", Return_Date);
+
+                Cmd.CommandText = QueryString;
+                //connection opened
+                Obj_Conn.Open();
+                // Executed query
+                Cmd.ExecuteNonQuery();
+                return "Movies is Returned to customer";
             }
             catch (Exception ex)
             {
