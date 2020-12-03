@@ -15,6 +15,7 @@ namespace video_rental_system
         private SqlDataReader Data_Reader;
         private SqlDataAdapter da = new SqlDataAdapter();
         string QueryString;
+       public string ConnString = @"Data Source=LAPTOP-39KQ6SLL\SQLEXPRESS;Initial Catalog=Video_Rental_System;Integrated Security=True";
         public int CustomerID, MoviesID, MovieID, RentalMovieID;
         public DB_Class()
         {
