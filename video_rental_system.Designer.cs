@@ -235,7 +235,7 @@ namespace video_rental_system
             this.panel3.Controls.Add(this.Customer_Detail);
             this.panel3.Location = new System.Drawing.Point(465, 292);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(347, 275);
+            this.panel3.Size = new System.Drawing.Size(337, 275);
             this.panel3.TabIndex = 3;
             // 
             // UPDATE_CL
@@ -250,7 +250,7 @@ namespace video_rental_system
             // 
             // DELETE_CL
             // 
-            this.DELETE_CL.Location = new System.Drawing.Point(257, 221);
+            this.DELETE_CL.Location = new System.Drawing.Point(232, 221);
             this.DELETE_CL.Name = "DELETE_CL";
             this.DELETE_CL.Size = new System.Drawing.Size(75, 23);
             this.DELETE_CL.TabIndex = 10;
