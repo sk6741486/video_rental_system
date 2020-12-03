@@ -266,6 +266,44 @@ namespace video_rental_system
                 MessageBox.Show("Please fill all the required details and add new detail with the help of ADD button ");
             }
         }
+
+        private void UPDATE_btn_Click(object sender, EventArgs e)
+        {
+            if (Rating_tb.Text != "" && Title_tb.Text != "" && Year_tb.Text != "" && Rental_Cost.Text != "" && Copies_tb.Text != "" && Plot_tb.Text != "" && Genre_tb.Text != "")
+            {
+                string message = Obj_data.MovieUpdate(Rating_tb.Text, Title_tb.Text, Year_tb.Text, Rental_Cost.Text, Copies_tb.Text, Plot_tb.Text, Genre_tb.Text);
+                MessageBox.Show(message);
+                Rating_tb.Text = "";
+                Title_tb.Text = "";
+                Year_tb.Text = "";
+                Rental_Cost.Text = "";
+                Copies_tb.Text = "";
+                Plot_tb.Text = "";
+                Genre_tb.Text = "";
+                Movies_Load();
+            }
+            else
+            {
+                // code to show the message if user did not fill all the details
+                MessageBox.Show("fullfill the all givin detail then move ahead");
+            }
+
+        }
+
+        private void DELET_btn_Click(object sender, EventArgs e)
+        {
+            string message = Obj_data.MovieDelete();
+            MessageBox.Show(message);
+            Rating_tb.Text = "";
+            Title_tb.Text = "";
+            Year_tb.Text = "";
+            Rental_Cost.Text = "";
+            Copies_tb.Text = "";
+            Plot_tb.Text = "";
+            Genre_tb.Text = "";
+            movie_tb.Text = "";
+            Movies_Load();
+        }
     }
  }
     

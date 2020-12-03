@@ -440,6 +440,7 @@ namespace video_rental_system
             this.UPDATE_btn.TabIndex = 18;
             this.UPDATE_btn.Text = "UPDATE";
             this.UPDATE_btn.UseVisualStyleBackColor = true;
+            this.UPDATE_btn.Click += new System.EventHandler(this.UPDATE_btn_Click);
             // 
             // DELET_btn
             // 
@@ -449,6 +450,7 @@ namespace video_rental_system
             this.DELET_btn.TabIndex = 17;
             this.DELET_btn.Text = "DELETE";
             this.DELET_btn.UseVisualStyleBackColor = true;
+            this.DELET_btn.Click += new System.EventHandler(this.DELET_btn_Click);
             // 
             // ADD_btn
             // 
