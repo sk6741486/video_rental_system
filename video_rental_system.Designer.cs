@@ -552,22 +552,24 @@ namespace video_rental_system
             // 
             // popularcust
             // 
+            this.popularcust.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.popularcust.Location = new System.Drawing.Point(808, 403);
             this.popularcust.Name = "popularcust";
             this.popularcust.Size = new System.Drawing.Size(98, 23);
             this.popularcust.TabIndex = 8;
             this.popularcust.Text = "popular customer";
-            this.popularcust.UseVisualStyleBackColor = true;
+            this.popularcust.UseVisualStyleBackColor = false;
             this.popularcust.Click += new System.EventHandler(this.popularcust_Click);
             // 
             // popularmov
             // 
+            this.popularmov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.popularmov.Location = new System.Drawing.Point(808, 444);
             this.popularmov.Name = "popularmov";
             this.popularmov.Size = new System.Drawing.Size(98, 23);
             this.popularmov.TabIndex = 9;
             this.popularmov.Text = "popular movie";
-            this.popularmov.UseVisualStyleBackColor = true;
+            this.popularmov.UseVisualStyleBackColor = false;
             this.popularmov.Click += new System.EventHandler(this.popularmov_Click);
             // 
             // tabPage2
@@ -583,11 +585,13 @@ namespace video_rental_system
             // 
             // popular_movie
             // 
+            this.popular_movie.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.popular_movie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.popular_movie.Location = new System.Drawing.Point(3, 0);
             this.popular_movie.Name = "popular_movie";
             this.popular_movie.Size = new System.Drawing.Size(428, 219);
             this.popular_movie.TabIndex = 0;
+            this.popular_movie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.popular_movie_CellContentClick);
             // 
             // tabPage1
             // 
@@ -602,6 +606,7 @@ namespace video_rental_system
             // 
             // grid_popularcustomer
             // 
+            this.grid_popularcustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.grid_popularcustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_popularcustomer.Location = new System.Drawing.Point(3, 3);
             this.grid_popularcustomer.Name = "grid_popularcustomer";

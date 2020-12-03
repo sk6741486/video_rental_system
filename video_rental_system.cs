@@ -351,6 +351,11 @@ namespace video_rental_system
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void popular_movie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
  }
     
