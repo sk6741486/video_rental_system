@@ -304,6 +304,25 @@ namespace video_rental_system
             movie_tb.Text = "";
             Movies_Load();
         }
+
+        private void AllMovies_Click(object sender, EventArgs e)
+        {
+            Rental_Load();
+        }
+
+        private void RentedOut_Click(object sender, EventArgs e)
+        {
+            grid_rental.DataSource = null;
+            try
+            {
+                grid_rental.DataSource = Obj_data.RentedOut_Data();
+                grid_rental.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
  }
     

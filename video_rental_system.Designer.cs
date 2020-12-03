@@ -81,6 +81,8 @@ namespace video_rental_system
             this.Rating = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.AllMovies = new System.Windows.Forms.Button();
+            this.RentedOut = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).BeginInit();
@@ -296,7 +298,7 @@ namespace video_rental_system
             this.panel3.Controls.Add(this.LastName);
             this.panel3.Controls.Add(this.FirstName);
             this.panel3.Controls.Add(this.Customer_Detail);
-            this.panel3.Location = new System.Drawing.Point(491, 292);
+            this.panel3.Location = new System.Drawing.Point(478, 292);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(347, 275);
             this.panel3.TabIndex = 3;
@@ -591,12 +593,36 @@ namespace video_rental_system
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 0;
             // 
+            // AllMovies
+            // 
+            this.AllMovies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.AllMovies.Location = new System.Drawing.Point(831, 292);
+            this.AllMovies.Name = "AllMovies";
+            this.AllMovies.Size = new System.Drawing.Size(75, 36);
+            this.AllMovies.TabIndex = 5;
+            this.AllMovies.Text = "AllMovies";
+            this.AllMovies.UseVisualStyleBackColor = false;
+            this.AllMovies.Click += new System.EventHandler(this.AllMovies_Click);
+            // 
+            // RentedOut
+            // 
+            this.RentedOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.RentedOut.Location = new System.Drawing.Point(831, 348);
+            this.RentedOut.Name = "RentedOut";
+            this.RentedOut.Size = new System.Drawing.Size(75, 36);
+            this.RentedOut.TabIndex = 6;
+            this.RentedOut.Text = "RentedOut";
+            this.RentedOut.UseVisualStyleBackColor = false;
+            this.RentedOut.Click += new System.EventHandler(this.RentedOut_Click);
+            // 
             // video_rental_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(904, 581);
+            this.Controls.Add(this.RentedOut);
+            this.Controls.Add(this.AllMovies);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -675,6 +701,8 @@ namespace video_rental_system
         private System.Windows.Forms.DateTimePicker dateRented_tb;
         private System.Windows.Forms.Button Return_Movie;
         private System.Windows.Forms.Button Issue_Movie;
+        private System.Windows.Forms.Button AllMovies;
+        private System.Windows.Forms.Button RentedOut;
     }
 }
 

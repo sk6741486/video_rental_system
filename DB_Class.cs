@@ -321,6 +321,30 @@ namespace video_rental_system
                 }
             }
         }
+        public DataTable AllMovies()
+        {
+            DataTable dt = new DataTable();
+            QueryString = "select * From AllMovies";
+            using (da = new SqlDataAdapter(QueryString, Obj_Conn))
+            {
+                Obj_Conn.Open();
+                da.Fill(dt);
+                Obj_Conn.Close();
+            }
+            return dt;
+        }
+        public DataTable RentedOut_Data()
+        {
+            DataTable dt = new DataTable();
+            QueryString = "select * From RentedOut";
+            using (da = new SqlDataAdapter(QueryString, Obj_Conn))
+            {
+                Obj_Conn.Open();
+                da.Fill(dt);
+                Obj_Conn.Close();
+            }
+            return dt;
+        }
     }
 }
 
