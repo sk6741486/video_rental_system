@@ -336,7 +336,7 @@ namespace video_rental_system
         public DataTable RentedOut_Data()
         {
             DataTable dt = new DataTable();
-            QueryString = "select * From RentedOut";
+            QueryString = "select * From rentOut";
             using (da = new SqlDataAdapter(QueryString, Obj_Conn))
             {
                 Obj_Conn.Open();
