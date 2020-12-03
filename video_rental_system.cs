@@ -323,6 +323,34 @@ namespace video_rental_system
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void popularcust_Click(object sender, EventArgs e)
+        {
+            grid_popularcustomer.DataSource = null;
+            try
+            {
+                grid_popularcustomer.DataSource = Obj_data.popcust_Data();
+                grid_popularcustomer.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void popularmov_Click(object sender, EventArgs e)
+        {
+            popular_movie.DataSource = null;
+            try
+            {
+                popular_movie.DataSource = Obj_data.popmovie_Data();
+                popular_movie.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
  }
     

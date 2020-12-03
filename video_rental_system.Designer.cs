@@ -29,13 +29,6 @@ namespace video_rental_system
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.customer = new System.Windows.Forms.TabPage();
-            this.grid_customer = new System.Windows.Forms.DataGridView();
-            this.movie = new System.Windows.Forms.TabPage();
-            this.grid_movie = new System.Windows.Forms.DataGridView();
-            this.rental = new System.Windows.Forms.TabPage();
-            this.grid_rental = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Return_Movie = new System.Windows.Forms.Button();
             this.Issue_Movie = new System.Windows.Forms.Button();
@@ -83,93 +76,35 @@ namespace video_rental_system
             this.label2 = new System.Windows.Forms.Label();
             this.AllMovies = new System.Windows.Forms.Button();
             this.RentedOut = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.customer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).BeginInit();
-            this.movie.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_movie)).BeginInit();
-            this.rental.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_rental)).BeginInit();
+            this.popularcust = new System.Windows.Forms.Button();
+            this.popularmov = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.popular_movie = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.grid_popularcustomer = new System.Windows.Forms.DataGridView();
+            this.rental = new System.Windows.Forms.TabPage();
+            this.grid_rental = new System.Windows.Forms.DataGridView();
+            this.movie = new System.Windows.Forms.TabPage();
+            this.grid_movie = new System.Windows.Forms.DataGridView();
+            this.customer = new System.Windows.Forms.TabPage();
+            this.grid_customer = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.popularcustomer = new System.Windows.Forms.TabControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popular_movie)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_popularcustomer)).BeginInit();
+            this.rental.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_rental)).BeginInit();
+            this.movie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_movie)).BeginInit();
+            this.customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).BeginInit();
+            this.popularcustomer.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.customer);
-            this.tabControl1.Controls.Add(this.movie);
-            this.tabControl1.Controls.Add(this.rental);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(442, 245);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // customer
-            // 
-            this.customer.Controls.Add(this.grid_customer);
-            this.customer.Location = new System.Drawing.Point(4, 22);
-            this.customer.Name = "customer";
-            this.customer.Padding = new System.Windows.Forms.Padding(3);
-            this.customer.Size = new System.Drawing.Size(434, 219);
-            this.customer.TabIndex = 0;
-            this.customer.Text = "customer";
-            this.customer.UseVisualStyleBackColor = true;
-            // 
-            // grid_customer
-            // 
-            this.grid_customer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.grid_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_customer.GridColor = System.Drawing.Color.Gainsboro;
-            this.grid_customer.Location = new System.Drawing.Point(6, 9);
-            this.grid_customer.Name = "grid_customer";
-            this.grid_customer.Size = new System.Drawing.Size(422, 207);
-            this.grid_customer.TabIndex = 0;
-            this.grid_customer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_customer_CellContentClick);
-            this.grid_customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_customer_CellContentClick);
-            // 
-            // movie
-            // 
-            this.movie.Controls.Add(this.grid_movie);
-            this.movie.Location = new System.Drawing.Point(4, 22);
-            this.movie.Name = "movie";
-            this.movie.Padding = new System.Windows.Forms.Padding(3);
-            this.movie.Size = new System.Drawing.Size(434, 219);
-            this.movie.TabIndex = 1;
-            this.movie.Text = "movie";
-            this.movie.UseVisualStyleBackColor = true;
-            // 
-            // grid_movie
-            // 
-            this.grid_movie.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.grid_movie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_movie.Location = new System.Drawing.Point(6, 6);
-            this.grid_movie.Name = "grid_movie";
-            this.grid_movie.Size = new System.Drawing.Size(422, 207);
-            this.grid_movie.TabIndex = 0;
-            this.grid_movie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_movie_CellContentClick);
-            // 
-            // rental
-            // 
-            this.rental.Controls.Add(this.grid_rental);
-            this.rental.Location = new System.Drawing.Point(4, 22);
-            this.rental.Name = "rental";
-            this.rental.Padding = new System.Windows.Forms.Padding(3);
-            this.rental.Size = new System.Drawing.Size(434, 219);
-            this.rental.TabIndex = 2;
-            this.rental.Text = "rental";
-            this.rental.UseVisualStyleBackColor = true;
-            // 
-            // grid_rental
-            // 
-            this.grid_rental.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.grid_rental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_rental.Location = new System.Drawing.Point(6, 6);
-            this.grid_rental.Name = "grid_rental";
-            this.grid_rental.Size = new System.Drawing.Size(422, 207);
-            this.grid_rental.TabIndex = 0;
-            this.grid_rental.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_rental_CellContentClick);
             // 
             // panel1
             // 
@@ -298,7 +233,7 @@ namespace video_rental_system
             this.panel3.Controls.Add(this.LastName);
             this.panel3.Controls.Add(this.FirstName);
             this.panel3.Controls.Add(this.Customer_Detail);
-            this.panel3.Location = new System.Drawing.Point(478, 292);
+            this.panel3.Location = new System.Drawing.Point(465, 292);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(347, 275);
             this.panel3.TabIndex = 3;
@@ -615,47 +550,191 @@ namespace video_rental_system
             this.RentedOut.UseVisualStyleBackColor = false;
             this.RentedOut.Click += new System.EventHandler(this.RentedOut_Click);
             // 
+            // popularcust
+            // 
+            this.popularcust.Location = new System.Drawing.Point(808, 403);
+            this.popularcust.Name = "popularcust";
+            this.popularcust.Size = new System.Drawing.Size(98, 23);
+            this.popularcust.TabIndex = 8;
+            this.popularcust.Text = "popular customer";
+            this.popularcust.UseVisualStyleBackColor = true;
+            this.popularcust.Click += new System.EventHandler(this.popularcust_Click);
+            // 
+            // popularmov
+            // 
+            this.popularmov.Location = new System.Drawing.Point(808, 444);
+            this.popularmov.Name = "popularmov";
+            this.popularmov.Size = new System.Drawing.Size(98, 23);
+            this.popularmov.TabIndex = 9;
+            this.popularmov.Text = "popular movie";
+            this.popularmov.UseVisualStyleBackColor = true;
+            this.popularmov.Click += new System.EventHandler(this.popularmov_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.popular_movie);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(434, 219);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "popular movie";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // popular_movie
+            // 
+            this.popular_movie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.popular_movie.Location = new System.Drawing.Point(3, 0);
+            this.popular_movie.Name = "popular_movie";
+            this.popular_movie.Size = new System.Drawing.Size(428, 219);
+            this.popular_movie.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.grid_popularcustomer);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(434, 219);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "popular customer";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // grid_popularcustomer
+            // 
+            this.grid_popularcustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_popularcustomer.Location = new System.Drawing.Point(3, 3);
+            this.grid_popularcustomer.Name = "grid_popularcustomer";
+            this.grid_popularcustomer.Size = new System.Drawing.Size(428, 216);
+            this.grid_popularcustomer.TabIndex = 0;
+            // 
+            // rental
+            // 
+            this.rental.Controls.Add(this.grid_rental);
+            this.rental.Location = new System.Drawing.Point(4, 22);
+            this.rental.Name = "rental";
+            this.rental.Padding = new System.Windows.Forms.Padding(3);
+            this.rental.Size = new System.Drawing.Size(434, 219);
+            this.rental.TabIndex = 2;
+            this.rental.Text = "rental";
+            this.rental.UseVisualStyleBackColor = true;
+            // 
+            // grid_rental
+            // 
+            this.grid_rental.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.grid_rental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_rental.Location = new System.Drawing.Point(6, 6);
+            this.grid_rental.Name = "grid_rental";
+            this.grid_rental.Size = new System.Drawing.Size(422, 207);
+            this.grid_rental.TabIndex = 0;
+            this.grid_rental.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_rental_CellContentClick);
+            // 
+            // movie
+            // 
+            this.movie.Controls.Add(this.grid_movie);
+            this.movie.Location = new System.Drawing.Point(4, 22);
+            this.movie.Name = "movie";
+            this.movie.Padding = new System.Windows.Forms.Padding(3);
+            this.movie.Size = new System.Drawing.Size(434, 219);
+            this.movie.TabIndex = 1;
+            this.movie.Text = "movie";
+            this.movie.UseVisualStyleBackColor = true;
+            // 
+            // grid_movie
+            // 
+            this.grid_movie.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.grid_movie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_movie.Location = new System.Drawing.Point(6, 6);
+            this.grid_movie.Name = "grid_movie";
+            this.grid_movie.Size = new System.Drawing.Size(422, 207);
+            this.grid_movie.TabIndex = 0;
+            this.grid_movie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_movie_CellContentClick);
+            // 
+            // customer
+            // 
+            this.customer.Controls.Add(this.grid_customer);
+            this.customer.Controls.Add(this.button1);
+            this.customer.Location = new System.Drawing.Point(4, 22);
+            this.customer.Name = "customer";
+            this.customer.Padding = new System.Windows.Forms.Padding(3);
+            this.customer.Size = new System.Drawing.Size(434, 219);
+            this.customer.TabIndex = 0;
+            this.customer.Text = "customer";
+            this.customer.UseVisualStyleBackColor = true;
+            // 
+            // grid_customer
+            // 
+            this.grid_customer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grid_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_customer.GridColor = System.Drawing.Color.Gainsboro;
+            this.grid_customer.Location = new System.Drawing.Point(9, 9);
+            this.grid_customer.Name = "grid_customer";
+            this.grid_customer.Size = new System.Drawing.Size(422, 207);
+            this.grid_customer.TabIndex = 0;
+            this.grid_customer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_customer_CellContentClick);
+            this.grid_customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_customer_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(67, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // popularcustomer
+            // 
+            this.popularcustomer.Controls.Add(this.customer);
+            this.popularcustomer.Controls.Add(this.movie);
+            this.popularcustomer.Controls.Add(this.rental);
+            this.popularcustomer.Controls.Add(this.tabPage1);
+            this.popularcustomer.Controls.Add(this.tabPage2);
+            this.popularcustomer.Location = new System.Drawing.Point(12, 12);
+            this.popularcustomer.Name = "popularcustomer";
+            this.popularcustomer.SelectedIndex = 0;
+            this.popularcustomer.Size = new System.Drawing.Size(442, 245);
+            this.popularcustomer.TabIndex = 0;
+            // 
             // video_rental_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(904, 581);
+            this.Controls.Add(this.popularmov);
+            this.Controls.Add(this.popularcust);
             this.Controls.Add(this.RentedOut);
             this.Controls.Add(this.AllMovies);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.popularcustomer);
             this.Name = "video_rental_system";
             this.Text = "video_rental_system";
             this.Load += new System.EventHandler(this.video_rental_system_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.customer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).EndInit();
-            this.movie.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_movie)).EndInit();
-            this.rental.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_rental)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.popular_movie)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_popularcustomer)).EndInit();
+            this.rental.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_rental)).EndInit();
+            this.movie.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_movie)).EndInit();
+            this.customer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_customer)).EndInit();
+            this.popularcustomer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage customer;
-        private System.Windows.Forms.TabPage movie;
-        private System.Windows.Forms.TabPage rental;
-        private System.Windows.Forms.DataGridView grid_customer;
-        private System.Windows.Forms.DataGridView grid_movie;
-        private System.Windows.Forms.DataGridView grid_rental;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
@@ -703,6 +782,20 @@ namespace video_rental_system
         private System.Windows.Forms.Button Issue_Movie;
         private System.Windows.Forms.Button AllMovies;
         private System.Windows.Forms.Button RentedOut;
+        private System.Windows.Forms.Button popularcust;
+        private System.Windows.Forms.Button popularmov;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView popular_movie;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView grid_popularcustomer;
+        private System.Windows.Forms.TabPage rental;
+        private System.Windows.Forms.DataGridView grid_rental;
+        private System.Windows.Forms.TabPage movie;
+        private System.Windows.Forms.DataGridView grid_movie;
+        private System.Windows.Forms.TabPage customer;
+        private System.Windows.Forms.DataGridView grid_customer;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabControl popularcustomer;
     }
 }
 
